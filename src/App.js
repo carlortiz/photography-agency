@@ -1,23 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from "./Navbar"
 import UserCard from "./UserCard";
 
 function App(){
-    const[value, setValue] = useState(null);
+    const [users, setUsers] = useState([])
+    const [loader, setLoader] = useState(false);
 
     function handleGetUsersClick() {
-        setValue(true);
+        fetchUserData();
     }
 
-    const [users, setUsers] = useState([])
-
     const fetchUserData = () => {
+        setLoader(true);
+
         fetch("https://reqres.in/api/users?page=1")
         .then(response => {
             return response.json()
         })
         .then(data => {
-            setUsers(data)
+            setLoader(false);
+            setUsers(data.data);
         })
     }
 
@@ -25,15 +27,24 @@ function App(){
         <div>
             <div><Navbar onGetUsersClick={handleGetUsersClick} ></Navbar></div>
             
+            {loader && (
+                <div>
+                    <p class="loader"></p>
+                    <h5>Please wait...</h5>
+                </div>
+            )}
             
+            {users.map(user => (
+                <UserCard 
+                    avatar = { user.avatar }
+                    email = { user.email } 
+                    first_name={ user.first_name } 
+                    last_name={ user.last_name } 
+                />
+            ))}
         </div>
     );
 }
 
 export default App;
-
-// fetch the data from the link
-// show a loader while the api fetches the data
-// display the data on Cards
-
 

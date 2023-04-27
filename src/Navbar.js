@@ -5,7 +5,7 @@ function Navbar(props) {
 
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><h3>Barnes & Nobles</h3></a>
+        <h1 class="navbar-brand">Photography Agency</h1>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#" onClick={handleClick}><h5>Get Users</h5></a>
