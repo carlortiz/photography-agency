@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Navbar from "./Navbar"
 import UserCard from "./UserCard";
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function App(){
     const [users, setUsers] = useState([])
@@ -25,6 +24,30 @@ function App(){
         })
     }
 
+    const renderUsers = () => {
+        let rows = [];
+        let row = [];
+
+        users.forEach((user, index) => {
+            row.push(
+                <UserCard 
+                    avatar = { user.avatar }
+                    email = { user.email } 
+                    first_name={ user.first_name } 
+                    last_name={ user.last_name } 
+                />
+            );
+            
+            const fullRow = (index + 1) % 3 === 0;
+            if (fullRow) {
+                rows.push(<Row>{row}</Row>);
+                row = [];
+            }
+        });
+
+        return rows;
+    }
+
     return (
         <div>
             <div><Navbar onGetUsersClick={handleGetUsersClick} ></Navbar></div>
@@ -36,16 +59,7 @@ function App(){
                 </div>
             )}
             
-            <Row>
-                {users.map(user => (
-                    <UserCard 
-                        avatar = { user.avatar }
-                        email = { user.email } 
-                        first_name={ user.first_name } 
-                        last_name={ user.last_name } 
-                    />
-                ))}
-            </Row>
+            <div class="container">{ renderUsers() }</div>
         </div>
     );
 }
