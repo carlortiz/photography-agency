@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Navbar from "./Navbar"
 import UserCard from "./UserCard";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App(){
     const [users, setUsers] = useState([])
@@ -34,14 +36,16 @@ function App(){
                 </div>
             )}
             
-            {users.map(user => (
-                <UserCard 
-                    avatar = { user.avatar }
-                    email = { user.email } 
-                    first_name={ user.first_name } 
-                    last_name={ user.last_name } 
-                />
-            ))}
+            <Row>
+                {users.map(user => (
+                    <UserCard 
+                        avatar = { user.avatar }
+                        email = { user.email } 
+                        first_name={ user.first_name } 
+                        last_name={ user.last_name } 
+                    />
+                ))}
+            </Row>
         </div>
     );
 }
