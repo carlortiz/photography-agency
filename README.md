@@ -3,7 +3,7 @@
 A web app built with Django designed to be an online platform for selling online products. 
 
 <p align="center"> 
-  <https://user-images.githubusercontent.com/45545195/234984322-ac3ef067-72ed-4e54-a123-81f90db18209.png" width=88% height=135%></center>
+  <img src="https://user-images.githubusercontent.com/45545195/234984511-3a08d92f-716c-4368-8ca4-d358717b6478.png" width=88% height=135%></center>
 </p>
 
 # General
