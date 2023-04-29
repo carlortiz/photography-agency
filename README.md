@@ -1,4 +1,4 @@
-# Ecommerce Site
+# Sample Site
 
 A sample site of an agency.
 
