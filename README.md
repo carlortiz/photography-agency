@@ -1,4 +1,4 @@
-# Sample Site
+# Photography Agency
 
 A sample site of an agency.
 
