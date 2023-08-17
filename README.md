@@ -8,7 +8,7 @@ A web app designed to show a photography agency (single page).
 
 # General
 
-A single page sample site built with React
+A single page sample site built with React.
 
 # Tools
 - React 18.2
