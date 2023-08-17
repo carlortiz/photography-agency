@@ -12,3 +12,6 @@ A single page sample site built with React.
 
 # Tools
 - React 18.2
+- JavaScript
+- HTML
+- CSS
